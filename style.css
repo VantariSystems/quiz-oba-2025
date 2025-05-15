@@ -1,0 +1,265 @@
+/* Corpo da página */
+body {
+  font-family: 'Rajdhani', sans-serif;
+  color: #f0f8ff;
+  font-size: 16px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #141e30, #243b55);
+}
+
+
+/* Container principal */
+.intro-container, .quiz-container {
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Rodapé */
+.footer {
+  margin-top: 50px;
+  padding: 20px;
+  text-align: center;
+  color: #888;
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-top: 1px solid #333;
+}
+
+/* Quiz Container */
+.quiz-container {
+ background: rgba(10, 20, 30, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
+  margin-top: 20px;
+  padding: 30px;
+  display: none;
+  flex-grow: 1;  /* Garante que a área do quiz ocupe o espaço disponível */
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Botão de Próxima */
+.next-button {
+  margin-top: 30px;
+  padding: 12px 20px;
+  background-color: #28a745;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.next-button:hover {
+  background-color: #218838;
+}
+/* Estilo para todos os botões do quiz */
+button {
+  font-family: 'Roboto', sans-serif;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  color: white;
+  background-color: #1e90ff;
+  cursor: pointer;
+  margin: 10px 0;
+  width: 100%;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #63b3ff;
+  transform: scale(1.03);
+}
+
+/* Botão de próxima pergunta (sobrescreve o padrão se necessário) */
+.next-button {
+  background-color: #ff9900;
+}
+
+.next-button:hover {
+  background-color: #ff6600;
+}
+
+/* Botão iniciar com destaque especial */
+#start-button {
+  background: linear-gradient(135deg, #00d4ff, #0051ff);
+  box-shadow: 0 0 25px #00cfff;
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 15px 40px;
+  margin: 60px auto 20px auto;
+  width: fit-content;
+  color: #ffffff;
+  border: 2px solid #00e0ff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+#start-button:hover {
+  background: linear-gradient(135deg, #00aaff, #003399);
+  box-shadow: 0 0 35px #00e0ff;
+  transform: scale(1.08);
+}
+
+/* Container das alternativas */
+.answers {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+@media (min-width: 600px) {
+  .answers {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.correct-answer {
+  background-color: #00ffcc !important;
+  color: #000;
+  font-weight: bold;
+  box-shadow: 0 0 15px #00ffcc;
+}
+
+.wrong-answer {
+  background-color: #ff4d4d !important;
+  color: #000;
+  font-weight: bold;
+  box-shadow: 0 0 15px #ff4d4d;
+}
+
+
+/* Estilo dos botões de resposta */
+.quiz-option {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  border: 1px solid #00ffff;
+  border-radius: 10px;
+  padding: 15px 20px;
+  color: #00ffff;
+  font-size: 0.9rem;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.quiz-option:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+  background: linear-gradient(135deg, #003d5c, #005a75);
+}
+
+h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.6rem;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+  margin-bottom: 30px;
+}
+.result.correct {
+  color: #00ffcc;
+  text-shadow: 0 0 5px #00ffcc;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.result.wrong {
+  color: #ff5050;
+  text-shadow: 0 0 5px #ff5050;
+  font-weight: bold;
+  margin-top: 20px;
+}
+#progress-bar-container {
+  width: 100%;
+  background: #1c1f2b;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 20px 0;
+  height: 20px;
+  box-shadow: 0 0 10px #00ffff;
+}
+
+#progress-bar {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #00ffff, #0077ff);
+  transition: width 0.4s ease;
+}
+
+
+/* Telas menores: celulares em pé (portrait) */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  .quiz-option {
+    font-size: 1rem;
+    padding: 10px;
+    margin: 8px auto;
+    width: 100%;
+  }
+
+  #start-button,
+  #next,
+  #music-toggle {
+    font-size: 1rem;
+    padding: 10px 20px;
+    width: 90%;
+    margin-bottom: 10px;
+  }
+
+  #progress-bar-container {
+    height: 10px;
+  }
+}
+
+/* Telas muito pequenas (menores de 400px) */
+@media (max-width: 400px) {
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  .quiz-option {
+    font-size: 0.95rem;
+  }
+
+  #quiz {
+    padding: 10px;
+  }
+}
+
+/* Telas grandes (monitores desktop) */
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .quiz-option {
+    font-size: 1.2rem;
+    padding: 15px 30px;
+  }
+
+  #start-button,
+  #next,
+  #music-toggle {
+    font-size: 1.1rem;
+    padding: 12px 28px;
+  }
+}
