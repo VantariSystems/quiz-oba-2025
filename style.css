@@ -188,36 +188,35 @@ h1 {
   transition: width 0.4s ease;
 }
 
-
+/* Para dispositivos móveis */
 @media (max-width: 600px) {
-  h1 {
-    font-size: 1.5rem;
-  }
-
-  h2 {
-    font-size: 1.2rem;
-  }
-
-  .quiz-option {
-    font-size: 1rem;
-    padding: 10px;
-    margin: 8px auto;
-    width: 100%;
-  }
-
   #start-button,
-  #next,
   #music-toggle {
     font-size: 1rem;
     padding: 10px 20px;
-    width: 90%;
-    margin-bottom: 10px;
+    width: 90%; /* Pode ajustar conforme necessário */
+    margin: 10px auto; /* Garantir centralização */
   }
 
-  #progress-bar-container {
-    height: 10px;
+  /* Centralizar o botão de música */
+  #music-toggle {
+    display: block;
+    margin: 10px auto; /* Centraliza o botão */
   }
 }
+
+/* Garantir a centralização em dispositivos grandes */
+@media (min-width: 1024px) {
+  #start-button,
+  #next,
+  #music-toggle {
+    font-size: 1.1rem;
+    padding: 12px 28px;
+    width: auto; /* Volta ao tamanho padrão em telas maiores */
+    margin: 10px auto; /* Centraliza os botões */
+  }
+}
+
 
 @media (max-width: 400px) {
   h1 {
@@ -233,23 +232,6 @@ h1 {
   }
 }
 
-@media (min-width: 1024px) {
-  h1 {
-    font-size: 2.2rem;
-  }
-
-  .quiz-option {
-    font-size: 1.2rem;
-    padding: 15px 30px;
-  }
-
-  #start-button,
-  #next,
-  #music-toggle {
-    font-size: 1.1rem;
-    padding: 12px 28px;
-  }
-}
 
 @keyframes pulse {
   0% {
