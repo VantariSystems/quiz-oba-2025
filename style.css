@@ -1,4 +1,3 @@
-/* Corpo da página */
 body {
   font-family: 'Rajdhani', sans-serif;
   color: #f0f8ff;
@@ -14,14 +13,12 @@ body {
 }
 
 
-/* Container principal */
 .intro-container, .quiz-container {
   max-width: 700px;
   margin: auto;
   padding: 20px;
 }
 
-/* Rodapé */
 .footer {
   margin-top: 50px;
   padding: 20px;
@@ -32,7 +29,6 @@ body {
   border-top: 1px solid #333;
 }
 
-/* Quiz Container */
 .quiz-container {
  background: rgba(10, 20, 30, 0.9);
   border-radius: 20px;
@@ -46,7 +42,6 @@ body {
   align-items: center;
 }
 
-/* Botão de Próxima */
 .next-button {
   margin-top: 30px;
   padding: 12px 20px;
@@ -61,7 +56,6 @@ body {
 .next-button:hover {
   background-color: #218838;
 }
-/* Estilo para todos os botões do quiz */
 button {
   font-family: 'Roboto', sans-serif;
   border: none;
@@ -81,7 +75,6 @@ button:hover {
   transform: scale(1.03);
 }
 
-/* Botão de próxima pergunta (sobrescreve o padrão se necessário) */
 .next-button {
   background-color: #ff9900;
 }
@@ -90,7 +83,6 @@ button:hover {
   background-color: #ff6600;
 }
 
-/* Botão iniciar com destaque especial */
 #start-button {
   background: linear-gradient(135deg, #00d4ff, #0051ff);
   box-shadow: 0 0 25px #00cfff;
@@ -112,7 +104,6 @@ button:hover {
   transform: scale(1.08);
 }
 
-/* Container das alternativas */
 .answers {
   display: grid;
   grid-template-columns: 1fr;
@@ -121,7 +112,7 @@ button:hover {
   width: 100%;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 700px) {
   .answers {
     grid-template-columns: 1fr 1fr;
   }
@@ -141,7 +132,6 @@ button:hover {
 }
 
 
-/* Estilo dos botões de resposta */
 .quiz-option {
   background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   border: 1px solid #00ffff;
