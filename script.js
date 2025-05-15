@@ -74,6 +74,9 @@ window.addEventListener("DOMContentLoaded", () => {
       btn.disabled = true;
       if (i === quizData[current].correct) {
         btn.classList.add("correct-answer");
+      if (i !== index) {
+      btn.classList.add("pulse"); // <-- animação se errou
+    }
       } else if (i === index) {
         btn.classList.add("wrong-answer");
       }
