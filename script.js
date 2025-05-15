@@ -5,7 +5,6 @@ window.addEventListener("DOMContentLoaded", () => {
   nextButton.addEventListener("click", nextQuestion);
 
 
-  // Dados do quiz para as duas fases
   const quizDataFase1 = [
     { question: "Qual é o maior planeta do Sistema Solar?", options: ["A) Terra", "B) Júpiter", "C) Saturno", "D) Netuno", "E) Vênus"], correct: 1 },
     { question: "Qual fase da Lua é completamente visível da Terra?", options: ["A) Nova", "B) Crescente", "C) Cheia", "D) Minguante", "E) Eclipse"], correct: 2 },
@@ -37,14 +36,9 @@ window.addEventListener("DOMContentLoaded", () => {
   let fase = 1;
   let quizData = quizDataFase1;
 
-  startButton.addEventListener("click", () => {
-    // Esconde o botão de início
+    startButton.addEventListener("click", () => {
     startButton.style.display = "none";
-
-    // Exibe o contêiner do quiz
     quizContainer.style.display = "block";
-
-    // Carrega a primeira pergunta
     loadQuestion();
   });
 
@@ -58,7 +52,6 @@ window.addEventListener("DOMContentLoaded", () => {
     answersEl.innerHTML = "";
     resultEl.textContent = "";
 
-    // Cria os botões de resposta
     q.options.forEach((opt, idx) => {
       const btn = document.createElement("button");
       btn.textContent = opt;
@@ -67,7 +60,6 @@ window.addEventListener("DOMContentLoaded", () => {
       answersEl.appendChild(btn);
     });
 
-    // Atualiza a barra de progresso
     const total = quizDataFase1.length + quizDataFase2.length;
     const currentQuestionNumber = fase === 1 ? current + 1 : current + quizDataFase1.length + 1;
     const progress = (currentQuestionNumber / total) * 100;
@@ -78,7 +70,6 @@ window.addEventListener("DOMContentLoaded", () => {
     const resultEl = document.getElementById("result");
     const buttons = document.querySelectorAll(".quiz-option");
 
-    // Desativa todos os botões
     buttons.forEach((btn, i) => {
       btn.disabled = true;
       if (i === quizData[current].correct) {
@@ -88,7 +79,6 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Atualiza a pontuação e a exibição da resposta
     if (index === quizData[current].correct) {
       resultEl.textContent = "✅ Acertou! Muito bem!";
       resultEl.className = "result correct";
@@ -100,11 +90,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
     current++;
 
-    // Se ainda há perguntas, mostre o botão de próxima
     if (current < quizData.length) {
       nextButton.style.display = "inline-block";
     } else {
-      // Caso tenha terminado a fase 1, comece a fase 2
       if (fase === 1) {
         fase = 2;
         quizData = quizDataFase2;
@@ -116,7 +104,6 @@ window.addEventListener("DOMContentLoaded", () => {
           nextButton.style.display = "inline-block";
         }, 1500);
       } else {
-        // Fim do quiz
         setTimeout(() => {
           document.getElementById("quiz").innerHTML = `
             <h2>🎉 Parabéns! Você acertou ${score} de ${quizDataFase1.length + quizDataFase2.length} perguntas! Boa viagem cósmica Giulia! 🚀🔭💫</h2>
@@ -132,11 +119,9 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// Música de fundo
 const musica = document.getElementById("musica-fundo");
 const musicToggleBtn = document.getElementById("music-toggle");
 
-// Quando o botão de música é clicado, alterna entre tocar e pausar
 musicToggleBtn.addEventListener("click", () => {
   if (musica.paused) {
     musica.play();  // Toca a música
